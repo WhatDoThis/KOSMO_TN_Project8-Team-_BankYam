@@ -1,0 +1,302 @@
+
+.main-div{
+    margin-top:15rem;
+    margin-bottom:15rem;
+    width: 70%;
+    height: 600px;
+    display: inline-flex;
+}
+.main-div-div1{
+    width: 60%;
+    height: 100%;
+    background-image: url(/img/indexphoto.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.5s;
+}
+.main-div-div2{
+    width: 40%;
+    height: 100%;
+    display: block;
+    transition: all 0.5s;
+}
+.main-button-div1{
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+.main-button-div2{
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+.main-button1{
+    width: 50%;
+    height: 100%;
+    background-color: #5F4934;
+    background-image: url(/img/transfer.png);
+    background-position: center;
+    background-size: 120px;
+    background-repeat: no-repeat;
+    border-collapse: collapse;
+    border: 0.5px solid lightgray;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+.main-button2{
+    width: 50%;
+    height: 100%;
+    background-color: #5F4934;
+    background-image: url(/img/talk.png);
+    background-position: center;
+    background-size: 140px;
+    background-repeat: no-repeat;
+    border-collapse: collapse;
+    border: 0.5px solid lightgray;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+.main-button3{
+    width: 50%;
+    height: 100%;
+    background-color: #5F4934;
+    background-image: url(/img/account.png);
+    background-position: center;
+    background-size: 150px;
+    background-repeat: no-repeat;
+    border-collapse: collapse;
+    border: 0.5px solid lightgray;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+.main-button4{
+    width: 50%;
+    height: 100%;
+    background-color: #5F4934;
+    background-image: url(/img/friend.png);
+    background-position: center;
+    background-size: 120px;
+    background-repeat: no-repeat;
+    border-collapse: collapse;
+    border: 0.5px solid lightgray;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+.button-content{
+    position: absolute;
+    width:70%;
+    height:30px;
+    top: 40px;
+    left: 0px;
+    font-size: 30px;
+    color: transparent;
+    transition: all 0.5s;
+}
+.main-button1:hover{
+    background-position: bottom 10px right 20px;
+    background-color: #B39273;
+}
+.main-button2:hover{
+    background-position: bottom 10px right 20px;
+    background-color: #B39273;
+}
+.main-button3:hover{
+    background-position: bottom 10px right 10px;
+    background-color: #B39273;
+}
+.main-button4:hover{
+    background-position: bottom 20px right 10px;
+    background-color: #B39273;
+}
+.main-button1:hover .button-content{
+    color: white;
+    transform: translateX(10px);
+}
+.main-button2:hover .button-content{
+    color: white;
+    transform: translateX(10px);
+}
+.main-button3:hover .button-content{
+    color: white;
+    transform: translateX(10px);
+}
+.main-button4:hover .button-content{
+    color: white;
+    transform: translateX(10px);
+}
+.main-tit{
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    margin-bottom: 10rem;
+
+}
+.main-tit .title{
+    font-weight: 700;
+    font-size: 90px;
+    color: #333;
+    font-style: normal;
+    line-height: 90px;
+    letter-spacing: -.9px;
+    margin: auto;
+    line-height: 140px;
+}
+.main-intcom{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    position: relative;
+    margin-bottom: 250px;
+}
+.main-intcom .intcom-div1{
+    position: absolute;
+    width: 818px;
+    height: 351px;
+    left: 10%;
+    transition: all 0.5s;
+}
+.main-intcom .intcom-div2{
+    position: absolute;
+    width: 700px;
+    height: 604px;
+    left: 46.8%;
+    top: 93px;
+    transition: all 0.5s;
+}
+.main-intcom .intcom-div3{
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    top: -3%;
+    left: 55%;
+    transition: all 0.5s;
+}
+.intcom-div3 .intcom-div3-tit{
+    font-size: 27px;
+}
+.main-intcom .intcom-div4{
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    top: 62%;
+    left: 16%;
+    transition: all 0.5s;
+}
+.intcom-div4 .intcom-div4-tit{
+    font-size: 27px;
+    transition: all 0.5s;
+}
+.intcom-div4 .intcom-div4-con{
+    font-size: 17px;
+    line-height: 150%;
+}
+.text_under{
+    position: relative;
+}
+.text_under::after {
+    content: "";
+    width: 100%;
+    height: 30px;
+    background: #B39273;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 10px;
+    z-index: -1;
+}
+
+@media screen and (max-width: 1270px){
+    .main-div-div1{
+        width:0;
+        margin-left:10%;
+    }
+    .main-div-div2{
+        width: 700px;
+        display: block;
+    }
+    .main-intcom .intcom-div1{
+        display:none;
+    }
+    .main-intcom .intcom-div2{
+        position: relative;
+        width: 1222px;
+        height: 604px;
+        left: 1%;
+        top: -30px;
+    }
+    .intcom-div4 .intcom-div4-tit{
+        display:none;
+    }
+}
+@media screen and (max-width: 726px){
+    .main-div{
+        margin-top:10rem;
+        margin-bottom:0rem;
+    }
+    .main-div-div2{
+            height: 60%;
+    }
+    .main-button1{
+        background-size: 90px;
+    }
+    .main-button2{
+                background-size: 90px;
+    }
+    .main-button3{
+                background-size: 90px;
+    }
+    .main-button4{
+                background-size: 90px;
+    }
+    .button-content{
+        font-size: 25px;
+    }
+    .main-intcom{
+        margin-bottom: 0px;
+    }
+
+}
+@media screen and (max-width: 607px){
+    .main-div{
+        margin-top:13rem;
+        margin-bottom:0rem;
+        height: 500px;
+    }
+    .main-div-div1{
+            width:0;
+            margin-left:5%;
+    }
+    .main-div-div2{
+            height: 55%;
+    }
+    .main-button1{
+        background-size: 80px;
+    }
+    .main-button2{
+                background-size: 80px;
+    }
+    .main-button3{
+                background-size: 80px;
+    }
+    .main-button4{
+                background-size: 80px;
+    }
+    .button-content{
+        top: 10px;
+        font-size: 20px;
+    }
+    .main-tit{
+        display:none;
+
+    }
+    .main-intcom{
+        display:none;
+    }
+
+}
+

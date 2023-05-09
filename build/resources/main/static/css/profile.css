@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.profile-upcontainer{
+    margin-top:15rem;
+    width: 100%;
+    height: 200px;
+    border-bottom: 2px solid #5F4934 ;
+}
+.profile-div{
+    width:100%;
+    height:100%;
+    display:flex;
+}
+.profile-photo{
+    margin-left: 20px;
+    width: 180px;
+    height: 180px;
+    overflow:hidden;
+    border: 0.5px solid #5F4934;
+    border-radius: 50%;
+    position:relative;
+}
+.profile-name{
+    margin-left: 20px;
+    margin-top: 50px;
+    width: 500px;
+    height: 40px;
+    display: inline-flex;
+    border-bottom: 0.5px solid rgb(156, 156, 156);
+    padding-bottom: 10px;
+}
+.upload_btn{
+    display:none;
+}
+#upload_btn_label{
+    display:inline-block;
+    text-transform: uppercase;
+    color:var(--vsthemecolor);
+    background-color: var(--themecolor);
+    text-align: center;
+    height:20px;
+    padding:12px 25px;
+    font-size:13px;
+    user-select:none;
+    cursor:pointer;
+    border-radius:5px;
+    margin-left: 20px;
+    margin-top: 15px;
+
+}
+
+
+.profile-edit{
+    margin-left: 70%;
+    margin-top: 100px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 10px;
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: #5F4934;
+    transition: all 0.2s;
+}
+.profile-downcontainer{
+    margin-top: 50px;
+    margin-left: 5%;
+    width: 80%;
+    height: 800px;
+    display: flex;
+    transition:all 0.5s;
+}
+.downcontainer-left{
+    width: 25%;
+    height: 100%;
+}
+.downcontainer-right{
+    margin-left: 100px;
+    width: 75%;
+    height: 100%;
+}
+.profile-edit:hover{
+    background-color: #B39273;
+}
+.profile-list{
+    width: 200px;
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.profile-list li{
+    width: 200px;
+    padding: 5px;
+    border-bottom: 0.5px solid #5F4934;
+    transition:all 0.5px;
+}
+.profile-list li:hover{
+    background-color: #F7F3EF;
+    cursor: pointer;
+}
+.list-element1-contents{
+    width: 200px;
+    height:50px;
+    display: none;
+    padding-top: 10px;
+}
+.list-element1-contents a{
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.list-element2-contents{
+    width: 200px;
+    height:50px;
+    display: none;
+    padding-top: 10px;
+}
+.list-element2-contents a{
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.focus{
+    background-color: #F7F3EF;
+}
+.table-div{
+    width: 90%;
+}
+.list-table{
+    border: 1px solid #eee;
+    width: 900px;
+    height: 200px;
+    font-size: 18px;
+    background-color: #F7F3EF;
+    white-space:nowrap;
+    border-collapse:collapse;
+    table-layout: fixed;
+    display: none;
+    margin-top: 20px;
+
+}
+.list-table thead{
+    background-color: #5F4934;
+    color: white;
+}
+.list-table th{
+    padding: 10px;
+}
+.list table tbody{
+    display:block;
+}
+.list-table tbody tr:nth-child(1){
+    background-color: white;
+}
+.list-table td, .list-table tr{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.profile-table{
+    border: 1px solid #eee;
+    width: 120%;
+    background-color: #F7F3EF;
+    font-size: 18px;
+    margin-top: 20px;
+    display: none;
+}
+.profile-table th{
+    background-color: #5F4934;
+    padding: 10px;
+    color: white;
+}
+.profile-table td{
+    padding-left: 10px;
+    text-align: left;
+}
+.none-table{
+    width: 120%;
+    height: 200px;
+    background-color: #F7F3EF;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1470px){
+    .profile-downcontainer{
+        margin-left:0;
+    }
+}
+@media screen and (max-width: 1270px){
+    .table-div{
+        width: 90%;
+        overflow-y:auto;
+    }
+}
+@media screen and (max-width: 790px){
+    .profile-list li{
+        width:100px;
+    }
+    .profile-photo{
+        top:50px;
+        width: 90px;
+        height: 90px;
+    }
+    .profile-name{
+        width: 300px;
+    }
+}

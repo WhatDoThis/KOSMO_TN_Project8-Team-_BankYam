@@ -1,0 +1,104 @@
+.transfer-table{
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    margin: 20px 10px;
+}
+.transfer-table th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #F7F3EF;
+}
+.transfer-table td {
+    width: 450px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+.amount-button{
+    padding: 10px;
+    text-align: center;
+
+}
+.fontS-35{
+    font-size: 35px;
+    text-align: center;
+
+}
+
+.transfer-table input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.transfer-btn{
+    height: 35px;
+    width: 80px;
+    font-size: 0.8rem;
+    color: white;
+    background-color: #5F4934;
+    margin-top: 0;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display :inline-block;
+}
+.amount-btn{
+    height: 35px;
+    width: 80px;
+    font-size: 0.8rem;
+    color: white;
+    background-color: #5F4934;
+    margin-top: 0;
+    transition: all 0.3s;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.transfer-table select{
+    width: 200px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 12px 13px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.transfer-table select:focus{
+    border: 1px solid #5F4934;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: 3px solid #F7F3EF;
+    border-radius: 10px;
+}
+
+.transfer-input{
+    width: 300px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: #F7F3EF;
+
+}
+
+.transfer-btn-div{
+    text-align : center;
+}

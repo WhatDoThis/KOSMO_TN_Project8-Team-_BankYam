@@ -1,0 +1,366 @@
+.frs-frame{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 페이지 왼쪽 구분 */
+.frs-lt{
+    width: 40.5%;
+    padding: 0 20px;
+}
+
+/* 왼쪽 친구찾기 관련 요소들 */
+.frs-search{
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* 왼쪽 친구찾기 관련 인풋, 검색버튼 */
+.frs-search-input{
+    width: 70%;
+    height: 30px;
+}
+
+.frs-search-btn{
+    width: 20%;
+    height: 30px;
+    background-color: #5F4934;
+    color: white;
+    margin-left: 15px;
+}
+
+.frs-search-btn:hover{
+    background-color: #B39273;
+    color: white;
+}
+
+/* 왼쪽 찾아진 친구 관련 요소들 */
+.frs-findFr{
+    width: 100%;
+    text-align: center;
+}
+
+.frs-img-profile{
+    border: 1px solid #5F4934;
+    border-radius: 50%;
+    width: 50%;
+    height: auto;
+    margin: 30px 0;
+}
+
+.frs-name-profile, .frs-name-profile-sub{
+    width: 80%;
+    height: 60px;
+    margin: 15px auto;
+    font-size: 18px;
+    font-weight: bold;
+    word-break: keep-all;
+    word-wrap: break-word;
+    color: #3B3838;
+}
+
+/* 왼쪽 찾아진 친구추가 및 차단 버튼 */
+.frs-manage{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.frs-plus-btn, .frs-block-btn{
+    display: none;
+    width: 25%;
+    height: 30px;
+    margin-right:0;
+    background-color: #5F4934;
+    color: white;
+    padding: 0;
+}
+
+.frs-send{
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.frs-send-btn{
+    display: none;
+    width: 55%;
+    height: 30px;
+    background-color: #5F4934;
+    color: white;
+}
+
+.frs-plus-btn:hover, .frs-block-btn:hover, .frs-send-btn:hover{
+    background-color: #B39273;
+    color: white;
+}
+
+.frs-block-btn{
+    margin-left: 4%;
+}
+
+
+
+/* 페이지 오른쪽 구분 */
+.frs-rt{
+    width: 55.5%;
+    padding: 0 20px;
+}
+
+/* 오른쪽 친구목록/요청 및 받은목록/차단목록 */
+.frs-list-group{
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.fontS-25{
+    font-size:25px;
+}
+
+.frs-img-circle{
+    border-radius: 50%;
+}
+
+.frs-group-li-a, .frs-group-rq-a, .frs-group-bk-a{
+    width: 20%;
+    height: 30px;
+    border: 2px solid #5F4934;
+    border-bottom: none;
+    background-color:white;
+    margin-right: 10px;
+    color: var(--themecolor);
+    text-align: center;
+}
+
+
+/* (친구목록일때)오른쪽 친구목록 요소들 */
+.frs-list{
+    position: relative;
+    border: 2px solid #5F4934;
+    padding-top: 5px;
+    margin-top:-2px;
+    height: 550px;
+    overflow: auto;
+    z-index: 2;
+}
+
+.frs-list-table{
+    width:100%;
+    border-collapse: collapse;
+}
+
+.frs-list-row, .frs-req-row, .frs-rec-row{
+    border-bottom: 0.5px solid #B39273;
+    height: 45px;
+    text-align: center;
+}
+
+.frs-list-row a, .frs-req-row a, .frs-rec-row a{
+    color: #5F4934;
+}
+
+.frs-list-row a:visit, .frs-req-row a:visit, .frs-rec-row a:visit{
+    color: #5F4934;
+}
+
+.frs-list-row a:hover, .frs-req-row a:hover, .frs-rec-row a:hover{
+    color: #B39273;
+}
+
+.frs-click{
+    cursor: pointer;
+}
+
+.frs-click:hover{
+    color: #B39273;
+}
+
+.fontS-10{
+    font-size:10px;
+}
+
+.color-fb8b00{
+    color:#fd8b00;
+}
+
+.frs-list-7{
+    width:7%;
+}
+
+.frs-list-15{
+    width:15%;
+}
+
+.frs-list-34{
+    width:34%;
+}
+
+.frs-list-12{
+    width:12%;
+}
+
+
+/* (받은/요청목록일때)오른쪽 받은/요청목록 요소들 */
+.frs-req{
+    position: relative;
+    border: 2px solid #5F4934;
+    padding-top: 5px;
+    margin-top:-2px;
+    height: 275px;
+    overflow: auto;
+    z-index: 2;
+}
+
+.frs-req-table, .frs-rec-table{
+    width:100%;
+    border-collapse: collapse;
+}
+
+.frs-req-row, .frs-rec-row{
+    height: 45px;
+}
+
+.frs-rec{
+    position: relative;
+    border: 2px solid #5F4934;
+    padding-top: 5px;
+    border-top: none;
+    margin-top:0;
+    height: 275px;
+    overflow: auto;
+    z-index: 2;
+}
+
+.frs-list-27{
+    width:27%;
+}
+
+.frs-list-24{
+    width:24%;
+}
+
+@media(max-width: 1000px){
+    .frs-frame{
+        display: block;
+        text-align:center;
+        font-size: 25px;
+    }
+
+    .frs-name-profile{
+        font-size:25px;
+    }
+
+    .frs-lt, .frs-rt{
+        width:85%;
+        margin: auto;
+        padding: 50px 0;
+    }
+
+    .frs-search-input, .frs-search-btn, .frs-plus-btn, .frs-block-btn, .frs-send-btn{
+        height: 55px;
+        font-size: 25px;
+    }
+
+    .frs-plus-btn, .frs-block-btn{
+        width: 35%;
+    }
+
+    .frs-send-btn{
+        width: 75%;
+    }
+
+    .frs-group-li-a, .frs-group-rq-a, .frs-group-bk-a{
+        width: 30%;
+        height: 55px;
+        padding-top: 15px;
+    }
+
+    .frs-list, .frs-req{
+        margin-top:-2.3px;
+    }
+
+    .frs-list{
+        height: 1000px;
+    }
+
+    .frs-req, .frs-rec{
+        height: 500px;
+    }
+
+    .frs-list-row, .frs-req-row, .frs-rec-row{
+        height: 60px;
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 900px){
+    .frs-list-row, .frs-req-row, .frs-rec-row{
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 700px){
+    .frs-list-row, .frs-req-row, .frs-rec-row{
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 650px){
+    .frs-frame{
+        font-size: 20px;
+    }
+
+    .frs-search-input, .frs-search-btn, .frs-plus-btn, .frs-block-btn, .frs-send-btn{
+        font-size: 20px;
+    }
+
+    .fontS-25{
+        font-size:20px;
+    }
+
+    .frs-list-row, .frs-req-row, .frs-rec-row{
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 550px){
+    .frs-frame{
+        font-size: 15px;
+    }
+
+    .frs-group-li-a, .frs-group-rq-a, .frs-group-bk-a{
+        font-size: 15px;
+        height:40px;
+        padding-top: 5px;
+    }
+
+    .frs-list{
+        height: 700px;
+    }
+
+    .frs-req, .frs-rec{
+        height: 350px;
+    }
+
+    .frs-list-row, .frs-req-row, .frs-rec-row{
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 450px){
+    .frs-group-li-a, .frs-group-rq-a, .frs-group-bk-a{
+        font-size: 10px;
+        height: 35px;
+    }
+
+    .fontS-25{
+        font-size:15px;
+    }
+
+    .frs-list-row, .frs-req-row, .frs-rec-row{
+        font-size: 10px;
+    }
+}

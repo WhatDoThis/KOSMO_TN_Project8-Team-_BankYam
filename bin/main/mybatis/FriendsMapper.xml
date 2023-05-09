@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tn.bankYam.mapper.FriendsMapper">
+
+    <resultMap type="friend" id="friendMap">
+        <id property="f_seq" column="f_seq"/>
+        <result property="f_mb_seq" column="f_mb_seq"/>
+        <result property="f_f_mb_seq" column="f_f_mb_seq"/>
+        <result property="f_rdate" column="f_rdate"/>
+        <association property="membery" column="mb_seq" resultMap="memberyMap" />
+    </resultMap>
+
+    <resultMap type="friendreq" id="friendReqMap">
+        <id property="fr_seq" column="fr_seq"/>
+        <result property="fr_req_mb_seq" column="fr_req_mb_seq"/>
+        <result property="fr_rec_mb_seq" column="fr_rec_mb_seq"/>
+        <result property="fr_status" column="fr_status"/>
+        <result property="fr_rdate" column="fr_rdate"/>
+        <association property="membery" column="mb_seq" resultMap="memberyMap" />
+    </resultMap>
+
+    <resultMap type="blocklist" id="blocklistMap">
+        <id property="bl_seq" column="bl_seq"/>
+        <result property="bl_mb_seq" column="bl_mb_seq"/>
+        <result property="bl_bl_mb_seq" column="bl_bl_mb_seq"/>
+        <result property="bl_rdate" column="bl_rdate"/>
+        <association property="membery" column="mb_seq" resultMap="memberyMap" />
+    </resultMap>
+
+    <resultMap type="membery" id="memberyMap">
+        <id property="mb_seq" column="mb_seq" />
+        <result property="mb_email" column="mb_email" />
+        <result property="mb_pwd" column="mb_pwd" />
+        <result property="mb_name" column="mb_name" />
+        <result property="mb_addr" column="mb_addr" />
+        <result property="mb_phone" column="mb_phone" />
+        <result property="mb_job" column="mb_job" />
+        <result property="mb_salary" column="mb_salary" />
+        <result property="mb_credit" column="mb_credit" />
+        <result property="mb_imagepath" column="mb_imagepath" />
+        <result property="mb_rdate" column="mb_rdate" />
+        <result property="mb_wdate" column="mb_wdate" />
+    </resultMap>
+
+    <resultMap type="accounty" id="accountyMap">
+        <id property="ac_seq" column="ac_seq" />
+        <result property="ac_pwd" column="ac_pwd" />
+        <result property="ac_mb_seq" column="ac_mb_seq" />
+        <result property="ac_balance" column="ac_balance" />
+        <result property="ac_name" column="ac_name" />
+        <result property="ac_main" column="ac_main" />
+        <result property="ac_status" column="ac_status" />
+        <result property="ac_pd_seq" column="ac_pd_seq" />
+        <result property="ac_pwd_check" column="ac_pwd_check" />
+        <result property="ac_purpose" column="ac_purpose" />
+        <result property="ac_rdate" column="ac_rdate" />
+        <result property="ac_udate" column="ac_udate" />
+        <result property="ac_xdate" column="ac_xdate" />
+        <association property="membery" column="mb_seq" resultMap="memberyMap" />
+    </resultMap>
+
+    <select id="searchFriend" resultType="list" resultMap="accountyMap" parameterType="Hashmap">
+        SELECT
+            *
+        FROM
+            accounty a
+
+        JOIN
+            membery m
+        ON
+            a.ac_mb_seq = m.mb_seq
+        <where>
+            <if test="email != 'empty'">
+                m.mb_email = #{email}
+            </if>
+            <if test="account != 'empty'">
+                a.ac_seq = #{account}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="selectFrList" resultType="list" resultMap="friendMap" parameterType="Membery">
+        SELECT
+            *
+        FROM
+            friend f
+        JOIN
+            membery m
+        ON
+            m.mb_seq = f.f_f_mb_seq
+        WHERE
+            f.f_mb_seq = #{mb_seq}
+        ORDER BY
+            m.mb_name
+    </select>
+
+    <select id="selectReqList" resultType="list" resultMap="friendReqMap" parameterType="Membery">
+        SELECT
+            *
+        FROM
+            friendreq fq
+        JOIN
+            membery m
+        ON
+            m.mb_seq = fr_rec_mb_seq
+        WHERE
+            fr_req_mb_seq = #{mb_seq}
+        AND
+            fr_status = '요청'
+        ORDER BY
+            m.mb_name
+    </select>
+
+    <select id="selectRecList" resultType="list" resultMap="friendReqMap" parameterType="Membery">
+        SELECT
+        *
+        FROM
+            friendreq fq
+        JOIN
+            membery m
+        ON
+            m.mb_seq = fr_req_mb_seq
+        WHERE
+            fr_rec_mb_seq = #{mb_seq}
+        AND
+            fr_status = '요청'
+        ORDER BY
+            m.mb_name
+    </select>
+
+    <select id="selectBlList" resultType="list" resultMap="blocklistMap" parameterType="Membery">
+        SELECT
+            *
+        FROM
+            blocklist b
+        JOIN
+            membery m
+        ON
+            m.mb_seq = b.bl_bl_mb_seq
+        WHERE
+            b.bl_mb_seq = #{mb_seq}
+        ORDER BY
+            m.mb_name
+    </select>
+
+    <select id="checkFrReq" resultType="Friendreq" parameterType="Hashmap">
+        SELECT
+            *
+        FROM
+            FRIENDREQ
+        WHERE
+            (FR_REQ_MB_SEQ = #{myId} OR FR_REQ_MB_SEQ = #{frId})
+        AND
+            (FR_REC_MB_SEQ = #{frId} OR FR_REC_MB_SEQ = #{myId})
+    </select>
+
+    <select id="checkFrBlock" resultType="Blocklist" parameterType="Hashmap">
+        SELECT
+            *
+        FROM
+            BLOCKLIST
+        WHERE
+            BL_MB_SEQ = #{myId} AND BL_BL_MB_SEQ = #{frId}
+    </select>
+
+    <select id="checkFr" resultType="Friend" parameterType="Hashmap">
+        SELECT
+            *
+        FROM
+            FRIEND
+        WHERE
+            (F_MB_SEQ = #{myId} and F_F_MB_SEQ = #{frId})
+        OR
+            (F_MB_SEQ = #{frId} and F_F_MB_SEQ = #{myId})
+    </select>
+
+    <insert id="insertFrReq" parameterType="Hashmap" >
+        <selectKey keyProperty="fr_seq" order="BEFORE" resultType="long">
+            select FRIENDREQ_SEQ.nextval from dual
+        </selectKey>
+        insert into FRIENDREQ values(#{fr_seq}, #{myId}, #{frId}, '요청', SYSDATE)
+    </insert>
+
+    <insert id="insertFrBlock" parameterType="Hashmap" >
+        <selectKey keyProperty="bl_seq" order="BEFORE" resultType="long">
+            select BLOCKLIST_SEQ.nextval from dual
+        </selectKey>
+        insert into BLOCKLIST values(#{bl_seq}, #{myId}, #{frId}, SYSDATE)
+    </insert>
+
+    <insert id="insertFrM" parameterType="Hashmap">
+        <selectKey keyProperty="f_seq" order="BEFORE" resultType="long">
+            select FRIEND_SEQ.nextval from dual
+        </selectKey>
+            insert into FRIEND values(#{f_seq}, #{myId}, #{frId}, SYSDATE)
+    </insert>
+
+    <insert id="insertFrF" parameterType="Hashmap">
+        <selectKey keyProperty="f_seq" order="BEFORE" resultType="long">
+            select FRIEND_SEQ.nextval from dual
+        </selectKey>
+        insert into FRIEND values(#{f_seq}, #{frId}, #{myId}, SYSDATE)
+    </insert>
+
+    <delete id="deleteFr" parameterType="Hashmap">
+        delete from FRIEND where (F_MB_SEQ = #{myId} and F_F_MB_SEQ = #{frId})
+        or (F_MB_SEQ = #{frId} and F_F_MB_SEQ = #{myId})
+    </delete>
+
+    <delete id="deleteFrReqRec" parameterType="Hashmap">
+        delete from FRIENDREQ
+        <where>
+            <if test="catDel == 'reqDel'">
+                FR_REQ_MB_SEQ = #{myId} and FR_REC_MB_SEQ = #{frId}
+            </if>
+            <if test="catDel == 'recDel'">
+                FR_REQ_MB_SEQ = #{frId} and FR_REC_MB_SEQ = #{myId}
+            </if>
+        </where>
+    </delete>
+
+    <delete id="deleteFrBlock" parameterType="Hashmap">
+        delete from BLOCKLIST where BL_MB_SEQ = #{myId} and BL_BL_MB_SEQ = #{frId}
+    </delete>
+
+</mapper>

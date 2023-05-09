@@ -1,0 +1,247 @@
+.acs-frame{
+    width: 100%;
+}
+
+/* 계좌주명 및 새계좌생성 버튼 그룹 */
+.acs-body-head{
+    display: inline-flex;
+    justify-content: space-between;
+    width:100%;
+    height: auto;
+    align-items: center;
+}
+
+/* 계좌주 이름 */
+.acs-title{
+    padding-left:50px;
+    color: var(--themecolor);
+}
+
+.new-ac-btn{
+    background-color:#F7F3EF;
+    color: #B39273;
+    margin-right: 100px;
+    padding: 15px 20px;
+    font-size: 17px;
+}
+
+.new-ac-btn:hover{
+    color: #5F4934;
+}
+
+
+/* 계좌 리스트 테이블 메인 div, size */
+.acs-table-size350{
+    width: 95%;
+    height: 375px;
+    margin: auto;
+    overflow: auto;
+}
+
+.acs-table-size300{
+    width: 95%;
+    height: 325px;
+    margin: auto;
+    overflow: auto;
+}
+
+.marginTop100{
+    margin-top:100px;
+}
+
+
+/* 계좌 리스트 테이블 */
+.acs-list-table{
+    width:100%;
+    border-collapse: collapse;
+}
+
+.acs-list-head{
+    height: 55px;
+    text-align: center;
+    margin-bottom:10px;
+}
+
+.acs-list-row{
+    border-bottom: 0.5px solid #B39273;
+    height: 70px;
+    text-align: center;
+}
+
+.acs-nameM-btnDiv{
+    float:right;
+    margin-right:10px;
+    margin-top: 3px;
+}
+
+.acs-nameM-btn{
+    background-color:#F7F3EF;
+    color: #B39273;
+}
+
+.acs-nameM-btn:hover{
+    color: #5F4934;
+}
+
+.acs-list-row a{
+    color: #B39273;
+}
+
+.acs-list-row a:visit{
+    color: #B39273;
+}
+
+.acs-list-row a:hover{
+    color: #5F4934;
+}
+
+/* 옵션 요소들 */
+.acs-click{
+    cursor: pointer;
+}
+
+.color-B39273{
+    color: #B39273;
+}
+
+.color-fb8b00{
+    color: #fb8b00;
+}
+
+.color-F7F3EF{
+    color:#F7F3EF;
+}
+
+.fontS-35{
+    font-size: 35px;
+}
+
+.fontS-25{
+    font-size: 25px;
+}
+
+.fontS-15{
+    font-size: 15px;
+}
+
+.fontS-12{
+    font-size: 12px;
+}
+
+.acs-list-30{
+    width:30%;
+}
+
+.acs-list-17{
+    width:17%;
+}
+
+.acs-list-11{
+    width:11%;
+}
+
+.acs-list-10{
+    width:10%;
+}
+
+.acs-list-5{
+    width:5%;
+}
+
+
+/* 별칭 설정 추가창 */
+.acs-nameM, .acs-psM{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s, 0s, transform 0.25s;
+}
+
+.show-acs-nameM, .show-acs-psM{
+     opacity: 1;
+     visibility: visible;
+     transform: scale(1.0);
+     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.acs-nameM-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 200px;
+  padding: 30px;
+  text-align: center;
+  background-color:#B39273;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.acs-nameMA-btn, .acs-nameMC-btn, .acs-psMA-btn, .acs-psMC-btn{
+    background-color:#F7F3EF;
+    color: #B39273;
+    border: none;
+}
+
+.acs-nameMA-btn:hover, .acs-nameMC-btn:hover, .acs-psMA-btn:hover, .acs-psMC-btn:hover{
+    color: #5F4934;
+}
+
+.acs-nameM-ps{
+    width: 70%;
+    height: 50px;
+    margin: auto;
+}
+
+
+/* 비밀번호 변경 추가창 */
+.acs-psM-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 350px;
+    padding: 30px;
+    text-align: center;
+    background-color:#B39273;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.acs-psM-inputGroup{
+    text-align: left;
+}
+
+.acs-psM-inputGroup form{
+    margin:0;
+}
+
+.acs-psM-btnGroup{
+    text-align: center;
+}
+
+.acs-psM-ps1, .acs-psM-ps2, .acs-psM-ps3{
+    width: 70%;
+    height: 30px;
+    margin: auto;
+    margin-top:5px;
+    margin-bottom:10px;
+    text-align: center;
+}
+
+.acC, .acC1, .acC2, .acC3{
+    margin: auto;
+    font-size: 15px;
+}
+
+input[type=password]:invalid {
+    border: 3px solid red;
+}
